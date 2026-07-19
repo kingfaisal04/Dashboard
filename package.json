@@ -2,9 +2,12 @@
   "name": "dashboard-root",
   "private": true,
   "version": "1.0.0",
+  "workspaces": [
+    "dashboard"
+  ],
   "scripts": {
     "dev": "npm --prefix dashboard run dev",
-    "build": "npm --prefix dashboard run build",
+    "build": "npm --prefix dashboard install && npm --prefix dashboard run build",
     "preview": "npm --prefix dashboard run preview"
   }
 }
