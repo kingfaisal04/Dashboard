@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "dev": "npm --prefix dashboard run dev",
-    "build": "npm --prefix dashboard install && npm --prefix dashboard run build",
+    "build": "node -e \"if (require('fs').existsSync('./dashboard/package.json')) { require('child_process').execSync('npm --prefix dashboard install && npm --prefix dashboard run build', {stdio: 'inherit'}); require('fs').cpSync('./dashboard/dist', './dist', {recursive: true}); } else { require('child_process').execSync('vite build', {stdio: 'inherit'}); }\"",
     "preview": "npm --prefix dashboard run preview"
   }
 }
